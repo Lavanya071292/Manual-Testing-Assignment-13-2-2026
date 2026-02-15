@@ -1,0 +1,205 @@
+1. Explain about State Transition Techniques
+
+State Transition Testing:
+    State transition testing is a black-box software testing technique that focuses on verifying the behavior of a system as it transitions between different states in response to specific events or inputs. 
+    This technique is particularly useful for systems where the output depends not only on the current input but also on the system's previous state.
+
+STATE TRANSITION TESTING INVOLVES :
+
+MODELING THE SYSTEM: 
+    Representing the system's states and transitions using a state transition diagram (a visual representation) or a state transition table (a tabular representation). 
+    These models define all possible states, the events that cause transitions between them, and the resulting actions.
+DESIGNING TEST CASES : 
+    Creating test cases to cover all valid and invalid state transitions. This includes:
+VALID TRANSITIONS:
+  Testing that the system correctly moves to the expected next state when a valid event occurs.
+INVALID TRANSITIONS: 
+  Testing that the system handles unexpected or incorrect events gracefully, preventing unauthorized transitions or displaying appropriate error messages.
+SEQUENCE TESTING:
+  Testing sequences of events and transitions to ensure the system behaves as expected over a series of interactions.
+EXECUTING TESTS:
+  Executing the designed test cases and observing the system's behavior to confirm that it transitions between states correctly and performs the right actions during these transitions.
+
+
+2. Explain in detail about WhiteBoxTesting Techniques 
+
+White box testing techniques include path coverage, statement coverage, and branch coverage.
+
+1. Statement Coverage: 
+      In this technique, the aim is to traverse all statements at least once. Hence, each line of code is tested. 
+      In the case of a flowchart, every node must be traversed at least once. 
+      Since all lines of code are covered, it helps in pointing out faulty code.
+
+2. Branch Coverage: 
+      Branch coverage focuses on testing the decision points or conditional branches in the code. 
+      It checks whether both possible outcomes (true and false) of each conditional statement are tested. 
+      In this technique, test cases are designed so that each branch from all decision points is traversed at least once. 
+      In a flowchart, all edges must be traversed at least once.
+
+3. Condition Coverage: 
+In this technique, all individual conditions must be covered as shown in the following example:
+      READ X, Y
+    IF(X == 0 || Y == 0)
+    PRINT ‘0’
+    #TC1 – X = 0, Y = 55
+    #TC2 – X = 5, Y = 0
+
+
+4. Multiple Condition Coverage: 
+In this technique, all the possible combinations of the possible outcomes of conditions are tested at least once. Let’s consider the following example:
+      READ X, Y
+    IF(X == 0 || Y == 0)
+    PRINT ‘0’
+    #TC1: X = 0, Y = 0
+    #TC2: X = 0, Y = 5
+    #TC3: X = 55, Y = 0
+    #TC4: X = 55, Y = 5
+
+5. Basis Path Testing: 
+In this technique, control flow graphs are made from code or flowchart and then Cyclomatic complexity is calculated which defines the number of independent paths so that the minimal number of test cases can be designed for each independent path. 
+
+Steps:
+  Make the corresponding control flow graph
+  Calculate the cyclomatic complexity
+  Find the independent paths
+  Design test cases corresponding to each independent path
+  V(G) = P + 1, where P is the number of predicate nodes in the flow graph
+  V(G) = E – N + 2, where E is the number of edges and N is the total number of nodes
+  V(G) = Number of non-overlapping regions in the graph
+  #P1: 1 – 2 – 4 – 7 – 8
+  #P2: 1 – 2 – 3 – 5 – 7 – 8
+  #P3: 1 – 2 – 3 – 6 – 7 – 8
+  #P4: 1 – 2 – 4 – 7 – 1 – . . . – 7 – 8
+
+6. Loop Testing: Loops are widely used and these are fundamental to many algorithms hence, their testing 
+is very important. Errors often occur at the beginnings and ends of loops.
+Simple loops: For simple loops of size n, test cases are designed that:
+Skip the loop entirely
+Only one pass through the loop
+2 passes
+m passes, where m < n
+n-1 ans n+1 passes
+
+Nested loops: 
+    For nested loops, all the loops are set to their minimum count, and we start from the innermost loop. 
+    Simple loop tests are conducted for the innermost loop and this is worked outwards till all the loops have been tested.
+
+Concatenated loops: 
+    Independent loops, one after another. Simple loop tests are applied for each. 
+    If they’renot independent, treat them like nesting.
+
+
+3. Explain the Advantages and Disadvantages of Experience Based Testing Technique
+
+Advantages of Experience-Based Testing:
+• Adaptability to Sparse Documentation: 
+        Experience-based testing shines when dealing with systems that lack detailed documentation. Its flexibility makes it available alternative in such scenarios.
+
+• Efficiency under Time Constraints: 
+        When time is of the essence and testing activities face tight schedules, 
+        This also proves its effectiveness by ensuring thorough testing within these limitations.
+
+• Harnessing Domain Expertise: 
+        The true power of experience-based testing lies in tapping into the collective wisdom of domain and technology experts associated with the software. 
+        This expertise can be drawn from various sources, including business analysts, customers, and clients, enriching the testing process.
+
+• Early Developer Feedback: 
+        By offering timely feedback to developers, this testing catalyzes swift issue resolution, contributing to smoother development cycles.
+
+• Enhanced Familiarity with Software: 
+        Experience-based testing empowers testing teams to become intimately familiar with the product’s intricacies as the software evolves.
+
+• Ideal for Addressing Operational Failures: 
+        Experience-based testing excels when analyzing and rectifying operational failures, showcasing its effectiveness in addressing critical issues.
+
+• Diverse Testing Techniques at Your Disposal: 
+        Embracing experience-based testing opens the door to many testing techniques, allowing for tailored approaches based on project nuances.
+
+• Efficient Exploratory Testing Initiation: 
+        Experience-based testing reduces the need for extensive predefined test plans, enabling testing to kick off swiftly in the 
+early stages of development.
+
+• Filling the Gaps in Automated Testing: 
+        Experience-based testing steps in where automated testing falls short, probing aspects of the software that resist effective automation.
+
+Disadvantages of Experience-Based Testing:
+
+• Not Ideal for Detail-Centric Systems: 
+        In systems that demand meticulous test documentation, experience-based testing might not be the best fit due to its reliance on testers’ intuition.
+
+• Repeatability Challenges: 
+        Consistently replicating test outcomes can be challenging due to the inherent variability of experience-based testing.
+
+• Complex Coverage Assessment: 
+         Precisely measuring test coverage becomes more intricate with experience-based testing, posing a challenge to ensure comprehensive testing.
+
+• Automation Compatibility: 
+        Experience-based tests are less conducive to subsequent automation efforts, limiting their integration into automated testing pipelines.
+
+• Quality Tied to Tester Expertise: 
+        The quality of testing outcomes is directly linked to individual testers’ expertise, which can vary widely, introducing an element of unpredictability.
+
+4. Explain Defect Lifecycle with the Flow Diagram
+
+
+New – Tester logs the defect
+
+Assigned – Assigned to developer
+
+Open – Developer analyzes the defect
+
+Fixed – Developer fixes it
+
+Retest – Tester verifies the fix
+
+Verified – Fix is confirmed
+
+Closed – Defect is officially close
+
+
+
+5. Brief about Test Metrics , Test Estimation and Test Pyramid
+
+TEST METRICS
+  Test metrics are quantifiable measurements used to evaluate, track, and improve the efficiency, quality, and performance of testing processes. 
+  They provide objective data for decision-making, help identify areas for improvement, and are used to report progress to stakeholders. Common examples include defect density, test coverage.
+
+KEY ASPECTS OF TEST METRICS 
+
+Quantifiable data: Metrics turn aspects of the testing process into numerical data that can be analyzed and compared over time or against benchmarks.
+
+Purpose: Their primary goal is to assess the effectiveness of testing activities, track progress, measure the quality of the product, and guide decision-making.
+
+Scope: They are applicable across all stages of the Software Development Life Cycle (SDLC) to ensure a defect-free product.
+
+Reporting: Metrics are used to provide clear, data-driven reports to stakeholders, from the technical team to executive management.
+
+TEST ESTIMATION
+  Test estimation is the process of predicting the time, effort, and resources needed for software testing activities. 
+  It is a crucial project management activity that helps in planning schedules, budgeting, and allocating resources effectively. 
+  Effective estimation involves breaking down tasks, considering factors like project complexity and staff skills, and continuously refining estimates throughout the project lifecycle.
+
+What test estimation includes
+
+Effort: The total hours (or other units like story points) required for testing tasks.
+
+Time: The duration for completing testing, broken down into working days or calendar time, considering deadlines.
+
+Cost: The budget needed for testing, which includes costs for resources, tools, and infrastructure.
+
+TEST PYRAMID 
+    The test pyramid is a software testing strategy that visualizes the optimal number of tests for each layer: unit, integration, and end-to-end (or UI) 
+
+The three layers of the test pyramid: 
+Unit Tests (Base):
+    1. Designed to verify individual components or functions in isolation. 
+    2. They are fast to write, execute, and maintain, making them ideal for early bug detection.
+
+Integration Tests (Middle):
+    1. These tests check how different units or components work together, forming the middle layer of the pyramid. 
+    2. They are more complex and take longer to run than unit tests but are still faster and less brittle than end-to-end tests.
+
+End-to-End (UI) Tests (Top):
+    1. The fewest tests, which simulate a real user's journey through the application from start to finish. 
+    2. These are the slowest and most expensive to run, so they should be used sparingly to test critical user flows.
+  
