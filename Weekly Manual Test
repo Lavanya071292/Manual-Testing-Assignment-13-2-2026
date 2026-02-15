@@ -1,7 +1,7 @@
 1. Explain about State Transition Techniques
 
 State Transition Testing:
-    State transition testing is a black-box software testing technique that focuses on verifying the behavior of a system as it transitions between different states in response to specific events or inputs. 
+    State transition testing is a black-box software testing technique that focuses on verifying the behaviour of a system as it transitions between different states in response to specific events or inputs. 
     This technique is particularly useful for systems where the output depends not only on the current input but also on the system's previous state.
 
 STATE TRANSITION TESTING INVOLVES :
